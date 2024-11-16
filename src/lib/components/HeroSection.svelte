@@ -1,5 +1,5 @@
 <style>
-  .hero {
+  /* .hero {
     display: flex;
     height: 100vh;
     overflow-y: hidden;
@@ -39,5 +39,5 @@
     bottom: 0;
     right: 52%;
     transform: translateY(25%);
-  }
+  } */
 </style>

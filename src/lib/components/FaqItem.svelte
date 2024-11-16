@@ -1,5 +1,5 @@
 <style>
-  .container {
+  /* .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -39,5 +39,5 @@
   .container-expanded .answer {
     max-height: unset;
     opacity: 1;
-  }
+  } */
 </style>

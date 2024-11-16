@@ -1,5 +1,5 @@
 <style>
-  button {
+  /* button {
     background-color: black;
     color: white;
     padding: 20px 24px;
@@ -13,5 +13,5 @@
   button:hover {
     background-color: white;
     color: black;
-  }
+  } */
 </style>

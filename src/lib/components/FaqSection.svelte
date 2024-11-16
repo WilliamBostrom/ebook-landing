@@ -1,5 +1,5 @@
 <style>
-  .additional-info {
+  /* .additional-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,5 +13,5 @@
 
   .additional-info a {
     text-decoration: underline;
-  }
+  } */
 </style>

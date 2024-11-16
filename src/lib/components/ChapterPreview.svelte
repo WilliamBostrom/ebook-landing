@@ -1,5 +1,5 @@
 <style>
-  .chapter-preview {
+  /* .chapter-preview {
     padding: 80px;
     margin-left: 12vw;
     margin-right: 20vw;
@@ -33,5 +33,5 @@
     box-shadow:
       0 4px 6px rgba(0, 0, 0, 0.1),
       0 1px 3px rgba(0, 0, 0, 0.08);
-  }
+  } */
 </style>

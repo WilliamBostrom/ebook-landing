@@ -1,5 +1,5 @@
 <style>
-  .author-section {
+  /* .author-section {
     padding: 80px 0;
     margin-left: 12vw;
     margin-right: 20vw;
@@ -18,7 +18,7 @@
 
   .author-text {
     width: 55%;
-  }
+  } */
 
   /* .author-text p:not(:last-of-type) {
     margin-bottom: 8px;
