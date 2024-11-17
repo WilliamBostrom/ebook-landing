@@ -1,5 +1,20 @@
+<script>
+  import chevron from "$assets/icons/chevron-down.svg"
+
+ let {faq, isExpanded, ...props} = $props()
+</script>
+
+<button aria-label="button" class="container"
+class:container-expanded={isExpanded} {...props}>
+  <div class="question-and-answer">
+    <p class="question mb-s">{faq.question}</p>
+    <p class="answer">{faq.answer}</p>
+  </div>
+  <img src={chevron} alt="arrow down">
+</button>
+
 <style>
-  /* .container {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -39,5 +54,5 @@
   .container-expanded .answer {
     max-height: unset;
     opacity: 1;
-  } */
+  }
 </style>
