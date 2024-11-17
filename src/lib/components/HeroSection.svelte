@@ -1,5 +1,14 @@
+<script></script>
+
+<section class="hero">
+  <div class="hero-showcase">
+    <h1 class="purple">Move to</h1>
+  </div>
+</section>
+
+
 <style>
-  /* .hero {
+  .hero {
     display: flex;
     height: 100vh;
     overflow-y: hidden;
@@ -19,7 +28,7 @@
     );
   }
 
-  .hero-text {
+/*   .hero-text {
     padding: 100px 5%;
     width: 50%;
     background-color: black;
