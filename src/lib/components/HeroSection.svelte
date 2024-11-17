@@ -1,8 +1,27 @@
-<script></script>
+<script>
+  import bookCover from "$assets/book_cover.png"
+  import phoneCover from "$assets/phone_cover.png"
+  import {Button} from "$components"
+</script>
 
 <section class="hero">
-  <div class="hero-showcase">
+  <div class="hero-showcase text-center">
     <h1 class="purple">Move to</h1>
+    <h1 class="purple mb-xs">SPAIN</h1>
+    <h4 class="italic semi-bold">
+      There's no need to make same mistake i made.
+    </h4>
+    <img src={bookCover} alt="book cover" class="book-cover">
+    <img src={phoneCover} alt="phone cover" class="phone-cover">
+  </div>
+  <div class="hero-text white text-center">
+    <h2>THIS BOOK WILL</h2>
+    <h2>SAVE YOU MONEY,</h2>
+    <h2 class="mb-m">TIME AND NERVES</h2>
+    <p class="light-grey mb-l">
+      I moved to spain seven years ago. The process was painful and difficult. I learned most things the hard way: finding a job, getting a visa, calculating my cost of living, choosing an apartment. That's why I wrote this e-book, to tell you how I did it. No bullshit, no stress.
+    </p>
+    <Button>Purchase E-book for $10</Button>
   </div>
 </section>
 
@@ -28,12 +47,6 @@
     );
   }
 
-/*   .hero-text {
-    padding: 100px 5%;
-    width: 50%;
-    background-color: black;
-  }
-
   .book-cover {
     position: absolute;
     right: 2%;
@@ -41,12 +54,16 @@
     width: 65%;
     transform: translateY(30%);
   }
-
+  .hero-text {
+    padding: 100px 5%;
+    width: 50%;
+    background-color: black;
+  }
   .phone-cover {
     position: absolute;
     width: 35%;
     bottom: 0;
     right: 52%;
     transform: translateY(25%);
-  } */
+  }
 </style>

@@ -1,4 +1,12 @@
-<script>
+const googleFontsHTML = ` <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />`;
+
 const chapters = [
   {
     number: 1,
@@ -34,82 +42,80 @@ const chapters = [
   },
 ];
 
-//state i svelte 5 (reactive state) - runes behövs
-let selectedChapterNumber = $state(1)
-//derived rune tar ett expression
-let selectedChapter = $derived(chapters.find(chapter => chapter.number === selectedChapterNumber))
+const faqs = [
+  {
+    question: "What will I learn from this ebook?",
+    answer:
+      "This ebook provides a comprehensive guide to relocating to Spain, covering everything from securing the right visa and navigating Spain's legal system to finding the perfect place to live and integrating into the local culture. Whether you're moving for work, study, or retirement, this guide equips you with the essential knowledge and practical steps to make your transition as smooth as possible.",
+  },
+  {
+    question: "Who is this ebook for?",
+    answer:
+      "This ebook is perfect for anyone considering a move to Spain, whether you're planning a short-term stay or a permanent relocation. It's designed for expats, retirees, students, and professionals who want to avoid common pitfalls and streamline their move. If you're looking for a detailed, step-by-step guide to help you every step of the way, this ebook is for you.",
+  },
+  {
+    question: "How much does the ebook cost?",
+    answer:
+      "The ebook is priced at $10. This one-time purchase grants you immediate access to all the content, including detailed chapters, actionable checklists, and valuable resources that will save you time, money, and stress during your move to Spain.",
+  },
+  {
+    question: "Is the information in the ebook up-to-date?",
+    answer:
+      "Yes, the ebook is regularly updated to reflect the latest changes in Spanish immigration laws, visa requirements, and other relevant information. The author, John Smith, stays on top of these updates to ensure that you're receiving the most accurate and current guidance available.",
+  },
+  {
+    question: "Can I get a refund if I'm not satisfied?",
+    answer:
+      "Absolutely. We offer a 30-day money-back guarantee. If you feel that the ebook did not meet your expectations or didn't provide the value you were looking for, simply contact us within 30 days of your purchase, and we’ll issue a full refund—no questions asked.",
+  },
+];
 
-function selectChapter(chapter){
-  selectedChapterNumber = chapter.number;
-}
-</script>
+const aboutTheAuthorText = `<p class="mb-xs">
+Niklas Fischer is a seasoned expatriate with over seven years of
+experience living in Spain. Originally from New York, John left behind
+the hustle of corporate America to embrace a more fulfilling life on the
+sun-soaked coasts of Spain. Through his own journey, he has navigated
+the challenges of securing visas, finding the perfect home, and adapting
+to a new culture, making him an expert in the field of relocation.
+</p>
+<p>
+Niklas’ practical advice is rooted in real-life experience, having
+learned firsthand the intricacies of moving to a new country. His goal
+is to help others avoid common pitfalls and make their transition to
+life in Spain as smooth as possible. When not sharing his expertise,
+John enjoys exploring Spain’s rich culture and history, fully embracing
+the lifestyle he once dreamed of.
+</p>`;
 
+const textForPaymentSuccess = ` <p class="light-grey mb-s">
+    You've made a great decision by choosing this guide to help you on your
+    journey to Spain. We’re confident that the insights and advice contained in
+    this ebook will save you time, money, and unnecessary stress as you plan
+    your move.
+  </p>
+  <p class="light-grey mb-s">
+    An email with your ebook is on its way to your inbox, along with a separate
+    purchase confirmation. Please keep an eye out for the email. If you don’t
+    see them within the next few minutes, be sure to check your spam or
+    promotions folder, just in case.
+  </p>
+  <p class="light-grey">
+    We're here to support you every step of the way. If you have any questions
+    or need further assistance, don’t hesitate to reach out. Enjoy your read and
+    best of luck with your move!
+  </p>`;
 
-<section class="chapter-preview default-margin">
-  <h2 class="mb-l">What you're getting</h2>
-  <div class="chapter-container">
-    <ul>
-      {#each chapters as chapter}
-    
-      <li>
-        <button class="chapter-title " 
-        class:selected-chapter-title={selectedChapterNumber === chapter.number}
-        aria-controls={`chapter-info-${chapter.number}`}
-        aria-label="Toggle chapter information"
-        aria-expanded={selectedChapterNumber === chapter.number}
-        onclick={() =>selectChapter(chapter)}
-        >
-      <h3>Chapter {chapter.number}: {chapter.title}</h3></button>
-        </li>
-        {/each}
-    </ul>
-    <div class="chapter-info">
-      <h3 class="chapter-strapline italic mb-s">
-       <!-- {chapters.find(chapter => chapter.number === selectedChapterNumber).title}
-         -->
-       {selectedChapter.title}
-      </h3>
-      <p>
-        {selectedChapter.excerpt}
-      </p>
-    </div>
-  </div>
-</section>
-
-<style>
-  .chapter-preview {
-    padding: 80px;
-    margin-left: 12vw;
-    margin-right: 20vw;
-    max-width: 1150px;
-  }
-  .chapter-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .chapter-container ul {
-    width: 40%;
-  }
-
-  .chapter-info {
-    width: 55%;
-  }
-
-  .chapter-title {
-    border-bottom: 1px solid grey;
-    width: 100%;
-    display: block;
-    padding: 12px;
-    text-align: left;
-  }
-
-  .selected-chapter-title {
-    background-color: black;
-    border: none;
-    color: white;
-    box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.1),
-      0 1px 3px rgba(0, 0, 0, 0.08);
-  }
-</style>
+const textForPaymentFailure = `<p class="light-grey mb-s">
+    We’re sorry, but it looks like there was an issue with your purchase. Don’t
+    worry—these things happen, and we're here to help.Please double-check your
+    payment details and try again.
+  </p>
+  <p class="light-grey mb-s">
+    We apologize for any inconvenience this may have caused and appreciate your
+    patience. We’re committed to ensuring that you get the guide you need to
+    make your move to Spain as smooth as possible.
+  </p>
+  <p class="light-grey mb-m">
+    If you’d like to try again, please click the button below to return to the
+    checkout page.
+  </p>`;
